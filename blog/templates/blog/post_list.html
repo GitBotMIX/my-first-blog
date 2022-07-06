@@ -64,8 +64,9 @@
 				<th class="answ">Ответ</th>
 			</tr>
 			<tr align="center">		<!-- Ячейка -->
-				<td>Является ли автомобиль с числом мест для сидения равным десяти (включая место водителя)автобусом?</td>
-				<td>Является</td>
+				{% for post in posts %}
+    				{{ post }}
+				{% endfor %}
 			</tr>
 			<tr align="center">
 				<td>Какой из приведенных составов транспортных средств не соответствует термину "автопоезд"?</td>
@@ -77,6 +78,13 @@
 			</tr>
 
 		</table>
+		{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+		{% endfor %}
 	</div>
 </body>
 </html>
